@@ -40,7 +40,7 @@ public class BirtServlet extends HttpServlet {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 			Connection conn = DriverManager.getConnection(prop.getProperty("SERVER_TEST_DB_DRIVER"),
 					prop.getProperty("USERNAME_TEST"), prop.getProperty("PASSWORD_TEST"));
-			CallableStatement statCall = conn.prepareCall("{call dbPSIava.dbo.getDataPointName}");
+			CallableStatement statCall = conn.prepareCall("{call ***.dbo.getDataPointName}");
 			ResultSet rs = statCall.executeQuery();
 
 			while (rs.next()) {
